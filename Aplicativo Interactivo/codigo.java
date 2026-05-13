@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Codigo {
+1
 
     // FUNCION PARA OBTENER FECHA
     public static String obtenerFecha() {
