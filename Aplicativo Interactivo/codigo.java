@@ -23,7 +23,7 @@ public class Codigo {
 
         try (Scanner teclado = new Scanner(System.in)) {
 
-            // VARIABLES
+            // VARIABLES Y TIPOS DE DATOS
             int opcion = 0;
 
             String nombreEstudiante =
@@ -38,7 +38,7 @@ public class Codigo {
             String estado =
                     "SIN SUBIR NOTAS";
 
-            // LISTA DE ESTUDIANTES
+            // ARREGLO DE ESTUDIANTES
             String[] listaEstudiantes = {
 
                     "ACOSTA SOLIS HANNA AIDE",
@@ -82,7 +82,7 @@ public class Codigo {
                     "VITERI CAMINO MAYDELIN SHANTAL"
             };
 
-            // DO WHILE
+            // CICLO DO WHILE
             do {
 
                 System.out.println("\n================================");
@@ -94,7 +94,8 @@ public class Codigo {
                                 + nombreEstudiante);
 
                 System.out.println(
-                        "Estado: " + estado);
+                        "Estado: "
+                                + estado);
 
                 System.out.println("\n1. Seleccionar estudiante");
                 System.out.println("2. Operaciones basicas");
@@ -114,7 +115,7 @@ public class Codigo {
                 } catch (NumberFormatException e) {
 
                     System.out.println(
-                            "Ingrese solo numeros.");
+                            "Debe ingresar numeros.");
 
                     continue;
                 }
@@ -127,7 +128,7 @@ public class Codigo {
                         System.out.println(
                                 "\n===== LISTA DE ESTUDIANTES =====");
 
-                        // FOR
+                        // CICLO FOR
                         for (int i = 0;
                              i < listaEstudiantes.length;
                              i++) {
@@ -198,24 +199,28 @@ public class Codigo {
                             System.out.println(
                                     "\n===== RESULTADOS =====");
 
+                            // SUMA
                             System.out.println(
                                     n1 + " + "
                                             + n2
                                             + " = "
                                             + (n1 + n2));
 
+                            // RESTA
                             System.out.println(
                                     n1 + " - "
                                             + n2
                                             + " = "
                                             + (n1 - n2));
 
+                            // MULTIPLICACION
                             System.out.println(
                                     n1 + " * "
                                             + n2
                                             + " = "
                                             + (n1 * n2));
 
+                            // DIVISION
                             if (n2 != 0) {
 
                                 System.out.println(
@@ -253,10 +258,10 @@ public class Codigo {
                             System.out.println(
                                     "\n===== REGISTRO DE NOTAS =====");
 
-                            // FOR
+                            // CICLO FOR
                             for (int i = 0; i < 5; i++) {
 
-                                // WHILE
+                                // CICLO WHILE
                                 while (true) {
 
                                     try {
@@ -264,7 +269,7 @@ public class Codigo {
                                         System.out.print(
                                                 "Ingrese nota "
                                                         + (i + 1)
-                                                        + ": ");
+                                                        + " (0-10): ");
 
                                         double nota =
                                                 Double.parseDouble(
@@ -293,9 +298,11 @@ public class Codigo {
                                 }
                             }
 
+                            // ACUMULADOR
                             double promedio =
                                     suma / 5;
 
+                            // MAYOR Y MENOR
                             double mayor =
                                     notas[0];
 
@@ -317,7 +324,7 @@ public class Codigo {
                                 }
                             }
 
-                            // ESTADO
+                            // CONDICIONAL IF ELSE
                             if (promedio >= 7) {
 
                                 estado = "APROBADO";
@@ -367,7 +374,7 @@ public class Codigo {
                         }
                     }
 
-                    // GUARDAR ARCHIVO
+                    // GUARDAR RESULTADOS
                     case 4 -> {
 
                         if (!notasRegistradas) {
