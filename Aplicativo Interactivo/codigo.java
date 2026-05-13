@@ -23,11 +23,9 @@ public class Codigo {
 
         try (Scanner teclado = new Scanner(System.in)) {
 
-            // VARIABLES Y TIPOS DE DATOS
             int opcion = 0;
 
-            String nombreEstudiante =
-                    "No seleccionado";
+            String nombreEstudiante = "No seleccionado";
 
             double[] notas = new double[5];
 
@@ -35,10 +33,8 @@ public class Codigo {
 
             String resultadosTxt = "";
 
-            String estado =
-                    "SIN SUBIR NOTAS";
+            String estado = "SIN SUBIR NOTAS";
 
-            // ARREGLO DE ESTUDIANTES
             String[] listaEstudiantes = {
 
                     "ACOSTA SOLIS HANNA AIDE",
@@ -82,20 +78,14 @@ public class Codigo {
                     "VITERI CAMINO MAYDELIN SHANTAL"
             };
 
-            // CICLO DO WHILE
             do {
 
                 System.out.println("\n================================");
                 System.out.println("      SISTEMA ACADEMICO");
                 System.out.println("================================");
 
-                System.out.println(
-                        "Estudiante actual: "
-                                + nombreEstudiante);
-
-                System.out.println(
-                        "Estado: "
-                                + estado);
+                System.out.println("Estudiante actual: " + nombreEstudiante);
+                System.out.println("Estado: " + estado);
 
                 System.out.println("\n1. Seleccionar estudiante");
                 System.out.println("2. Operaciones basicas");
@@ -103,342 +93,186 @@ public class Codigo {
                 System.out.println("4. Guardar resultados");
                 System.out.println("5. Salir");
 
-                System.out.print(
-                        "\nSeleccione una opcion: ");
+                System.out.print("\nSeleccione una opcion: ");
 
                 try {
-
-                    opcion =
-                            Integer.parseInt(
-                                    teclado.nextLine());
-
+                    opcion = Integer.parseInt(teclado.nextLine());
                 } catch (NumberFormatException e) {
-
-                    System.out.println(
-                            "Debe ingresar numeros.");
-
+                    System.out.println("Debe ingresar numeros.");
                     continue;
                 }
 
                 switch (opcion) {
 
-                    // SELECCIONAR ESTUDIANTE
                     case 1 -> {
 
-                        System.out.println(
-                                "\n===== LISTA DE ESTUDIANTES =====");
+                        System.out.println("\n===== LISTA DE ESTUDIANTES =====");
 
-                        // CICLO FOR
-                        for (int i = 0;
-                             i < listaEstudiantes.length;
-                             i++) {
-
-                            System.out.println(
-                                    (i + 1)
-                                            + ". "
-                                            + listaEstudiantes[i]);
+                        for (int i = 0; i < listaEstudiantes.length; i++) {
+                            System.out.println((i + 1) + ". " + listaEstudiantes[i]);
                         }
 
-                        System.out.print(
-                                "\nSeleccione estudiante: ");
+                        System.out.print("\nSeleccione estudiante: ");
 
                         try {
 
-                            int seleccion =
-                                    Integer.parseInt(
-                                            teclado.nextLine());
+                            int seleccion = Integer.parseInt(teclado.nextLine());
 
-                            if (seleccion >= 1
-                                    && seleccion <=
-                                    listaEstudiantes.length) {
+                            if (seleccion >= 1 && seleccion <= listaEstudiantes.length) {
 
-                                nombreEstudiante =
-                                        listaEstudiantes[
-                                                seleccion - 1];
-
+                                nombreEstudiante = listaEstudiantes[seleccion - 1];
                                 notasRegistradas = false;
-
-                                estado =
-                                        "SIN SUBIR NOTAS";
-
-                                System.out.println(
-                                        "\nEstudiante seleccionado correctamente.");
+                                estado = "SIN SUBIR NOTAS";
 
                             } else {
-
-                                System.out.println(
-                                        "Numero fuera de rango.");
+                                System.out.println("Numero fuera de rango.");
                             }
 
                         } catch (NumberFormatException e) {
-
-                            System.out.println(
-                                    "Ingrese numeros validos.");
+                            System.out.println("Ingrese numeros validos.");
                         }
                     }
 
-                    // OPERACIONES BASICAS
                     case 2 -> {
 
                         try {
 
-                            System.out.print(
-                                    "\nIngrese numero 1: ");
+                            System.out.print("\nIngrese numero 1: ");
+                            double n1 = Double.parseDouble(teclado.nextLine());
 
-                            double n1 =
-                                    Double.parseDouble(
-                                            teclado.nextLine());
+                            System.out.print("Ingrese numero 2: ");
+                            double n2 = Double.parseDouble(teclado.nextLine());
 
-                            System.out.print(
-                                    "Ingrese numero 2: ");
+                            System.out.println("\n===== RESULTADOS =====");
 
-                            double n2 =
-                                    Double.parseDouble(
-                                            teclado.nextLine());
+                            System.out.println(n1 + " + " + n2 + " = " + (n1 + n2));
+                            System.out.println(n1 + " - " + n2 + " = " + (n1 - n2));
+                            System.out.println(n1 + " * " + n2 + " = " + (n1 * n2));
 
-                            System.out.println(
-                                    "\n===== RESULTADOS =====");
-
-                            // SUMA
-                            System.out.println(
-                                    n1 + " + "
-                                            + n2
-                                            + " = "
-                                            + (n1 + n2));
-
-                            // RESTA
-                            System.out.println(
-                                    n1 + " - "
-                                            + n2
-                                            + " = "
-                                            + (n1 - n2));
-
-                            // MULTIPLICACION
-                            System.out.println(
-                                    n1 + " * "
-                                            + n2
-                                            + " = "
-                                            + (n1 * n2));
-
-                            // DIVISION
                             if (n2 != 0) {
-
-                                System.out.println(
-                                        n1 + " / "
-                                                + n2
-                                                + " = "
-                                                + (n1 / n2));
-
+                                System.out.println(n1 + " / " + n2 + " = " + (n1 / n2));
                             } else {
-
-                                System.out.println(
-                                        "No se puede dividir para cero.");
+                                System.out.println("No se puede dividir para cero.");
                             }
 
                         } catch (NumberFormatException e) {
-
-                            System.out.println(
-                                    "Ingrese numeros validos.");
+                            System.out.println("Ingrese numeros validos.");
                         }
                     }
 
-                    // REGISTRO DE NOTAS
                     case 3 -> {
 
-                        if (nombreEstudiante.equals(
-                                "No seleccionado")) {
+                        if (nombreEstudiante.equals("No seleccionado")) {
 
-                            System.out.println(
-                                    "\nPrimero seleccione estudiante.");
+                            System.out.println("\nPrimero seleccione estudiante.");
 
                         } else {
 
                             double suma = 0;
 
-                            System.out.println(
-                                    "\n===== REGISTRO DE NOTAS =====");
+                            int aprobados = 0;
+                            int reprobados = 0;
 
-                            // CICLO FOR
+                            System.out.println("\n===== REGISTRO DE NOTAS =====");
+
                             for (int i = 0; i < 5; i++) {
 
-                                // CICLO WHILE
                                 while (true) {
 
                                     try {
 
-                                        System.out.print(
-                                                "Ingrese nota "
-                                                        + (i + 1)
-                                                        + " (0-10): ");
+                                        System.out.print("Ingrese nota " + (i + 1) + " (0-10): ");
+                                        double nota = Double.parseDouble(teclado.nextLine());
 
-                                        double nota =
-                                                Double.parseDouble(
-                                                        teclado.nextLine());
-
-                                        if (nota >= 0
-                                                && nota <= 10) {
+                                        if (nota >= 0 && nota <= 10) {
 
                                             notas[i] = nota;
-
                                             suma += nota;
+
+                                            if (nota >= 7) aprobados++;
+                                            else reprobados++;
 
                                             break;
 
                                         } else {
-
-                                            System.out.println(
-                                                    "La nota debe estar entre 0 y 10.");
+                                            System.out.println("La nota debe estar entre 0 y 10.");
                                         }
 
                                     } catch (NumberFormatException e) {
-
-                                        System.out.println(
-                                                "Ingrese numeros validos.");
+                                        System.out.println("Ingrese numeros validos.");
                                     }
                                 }
                             }
 
-                            // ACUMULADOR
-                            double promedio =
-                                    suma / 5;
+                            double promedio = suma / 5;
 
-                            // MAYOR Y MENOR
-                            double mayor =
-                                    notas[0];
+                            double mayor = notas[0];
+                            double menor = notas[0];
 
-                            double menor =
-                                    notas[0];
-
-                            for (int i = 1;
-                                 i < 5;
-                                 i++) {
-
-                                if (notas[i] > mayor) {
-
-                                    mayor = notas[i];
-                                }
-
-                                if (notas[i] < menor) {
-
-                                    menor = notas[i];
-                                }
+                            for (int i = 1; i < 5; i++) {
+                                if (notas[i] > mayor) mayor = notas[i];
+                                if (notas[i] < menor) menor = notas[i];
                             }
 
-                            // CONDICIONAL IF ELSE
-                            if (promedio >= 7) {
-
-                                estado = "APROBADO";
-
-                            } else {
-
-                                estado = "REPROBADO";
-                            }
-
-                            System.out.println(
-                                    "\n===== RESULTADOS =====");
-
-                            System.out.println(
-                                    "Promedio: "
-                                            + promedio);
-
-                            System.out.println(
-                                    "Nota mayor: "
-                                            + mayor);
-
-                            System.out.println(
-                                    "Nota menor: "
-                                            + menor);
-
-                            System.out.println(
-                                    "Estado: "
-                                            + estado);
+                            if (promedio >= 7) estado = "APROBADO";
+                            else estado = "REPROBADO";
 
                             resultadosTxt =
-                                    "Promedio: "
-                                            + promedio
-                                            + "\n"
-
-                                            + "Nota mayor: "
-                                            + mayor
-                                            + "\n"
-
-                                            + "Nota menor: "
-                                            + menor
-                                            + "\n"
-
-                                            + "Estado: "
-                                            + estado
-                                            + "\n";
+                                    "Promedio: " + promedio + "\n"
+                                    + "Nota mayor: " + mayor + "\n"
+                                    + "Nota menor: " + menor + "\n"
+                                    + "Aprobados: " + aprobados + "\n"
+                                    + "Reprobados: " + reprobados + "\n"
+                                    + "Estado: " + estado + "\n";
 
                             notasRegistradas = true;
                         }
                     }
 
-                    // GUARDAR RESULTADOS
                     case 4 -> {
+
+                        System.out.println("\n--- Guardando Resultados ---");
 
                         if (!notasRegistradas) {
 
-                            System.out.println(
-                                    "\nNo existen notas para guardar.");
+                            System.out.println("No hay notas registradas.");
 
                         } else {
 
-                            try (
+                            try {
 
-                                    FileWriter fw =
-                                            new FileWriter(
-                                                    "resultados.txt",
-                                                    true);
+                                String carpeta = "Archivos";
+                                String archivo = "resultados.txt";
 
-                                    PrintWriter pw =
-                                            new PrintWriter(fw)
+                                java.io.File dir = new java.io.File(carpeta);
 
-                            ) {
+                                if (!dir.exists()) {
+                                    dir.mkdirs();
+                                }
 
-                                pw.println(
-                                        "================================");
+                                FileWriter fw = new FileWriter(carpeta + "/" + archivo, true);
+                                PrintWriter pw = new PrintWriter(fw);
 
-                                pw.println(
-                                        "ESTUDIANTE: "
-                                                + nombreEstudiante);
+                                pw.println("================================");
+                                pw.println("ESTUDIANTE: " + nombreEstudiante);
+                                pw.println("FECHA: " + obtenerFecha());
+                                pw.println("LENGUAJE: JAVA");
+                                pw.println(resultadosTxt);
+                                pw.println("================================");
 
-                                pw.println(
-                                        "FECHA: "
-                                                + obtenerFecha());
+                                pw.close();
 
-                                pw.println(
-                                        "LENGUAJE: JAVA");
-
-                                pw.println(
-                                        resultadosTxt);
-
-                                pw.println(
-                                        "================================");
-
-                                System.out.println(
-                                        "\nResultados guardados correctamente.");
+                                System.out.println("Guardado correctamente en Archivos/resultados.txt");
 
                             } catch (IOException e) {
-
-                                System.out.println(
-                                        "Error al guardar archivo.");
+                                System.out.println("Error: " + e.getMessage());
                             }
                         }
                     }
 
-                    // SALIR
-                    case 5 -> {
+                    case 5 -> System.out.println("\nSaliendo del sistema...");
 
-                        System.out.println(
-                                "\nSaliendo del sistema...");
-                    }
-
-                    default -> {
-
-                        System.out.println(
-                                "\nOpcion invalida.");
-                    }
+                    default -> System.out.println("\nOpcion invalida.");
                 }
 
             } while (opcion != 5);

@@ -1,0 +1,24 @@
+================================
+ESTUDIANTE: CASTELO BERRONES KATHERINE NICOL
+FECHA: 2026-05-13 09:18:48
+LENGUAJE: JAVA
+Promedio: 8.26
+Nota mayor: 9.0
+Nota menor: 7.5
+Aprobados: 5
+Reprobados: 0
+Estado: APROBADO
+
+================================
+================================
+ESTUDIANTE: VITERI CAMINO MAYDELIN SHANTAL
+FECHA: 2026-05-13 09:19:16
+LENGUAJE: JAVA
+Promedio: 8.2
+Nota mayor: 9.0
+Nota menor: 7.0
+Aprobados: 5
+Reprobados: 0
+Estado: APROBADO
+
+================================
