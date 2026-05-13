@@ -1,4 +1,5 @@
 Descripción del Proyecto
+
 Este programa es una aplicación de consola desarrollada en Java diseñada para la ejecución de operaciones lógicas y la gestión de datos. El sistema incluye un módulo de persistencia que permite almacenar los resultados obtenidos durante la ejecución en un archivo de texto externo, facilitando el seguimiento y la auditoria de los procesos realizados.
 
 Tecnologías y Herramientas
