@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Codigo",
+      "request": "launch",
+      "mainClass": "Codigo",
+      "projectName": "EXAMEN_PRACTICO_OPP_11373b03"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
